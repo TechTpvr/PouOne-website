@@ -55,23 +55,9 @@ sharepou: { android: "https://pouone.ir/downloads/SharePou.apk", windows: "https
 - توضیح کامل و کاربردها: `assets/js/products.js`
 - متن‌های محصولات بر پایه توضیحات اولیه نوشته شده‌اند؛ پیش از انتشار آن‌ها را با ویژگی‌های واقعی هر نرم‌افزار تطبیق دهید (به‌ویژه ConnectPou).
 
-## فونت Vazirmatn
+## فونت IRANSansX
 
-فونت از Google Fonts بارگذاری می‌شود. چون بخشی از کاربران ایران ممکن است به Google Fonts دسترسی پایدار نداشته باشند، **توصیه می‌شود فونت را روی خود سایت قرار دهید**:
-
-1. فایل `Vazirmatn[wght].woff2` را از [مخزن رسمی Vazirmatn](https://github.com/rastikerdar/vazirmatn) دانلود کنید و در `assets/fonts/` بگذارید.
-2. در `assets/css/style.css` (بالای فایل) اضافه کنید:
-   ```css
-   @font-face {
-     font-family: "Vazirmatn";
-     src: url("../fonts/Vazirmatn[wght].woff2") format("woff2");
-     font-weight: 100 900;
-     font-display: swap;
-   }
-   ```
-3. در `index.html` سه تگ `preconnect` و `stylesheet` مربوط به `fonts.googleapis.com` را حذف کنید و در متا‌تگ `Content-Security-Policy` عبارت‌های `https://fonts.googleapis.com` و `https://fonts.gstatic.com` را بردارید.
-
-تا قبل از این کار، در صورت نرسیدن فونت، سایت با Tahoma / فونت سیستم نمایش داده می‌شود و کاملاً قابل استفاده است.
+فونت به‌صورت محلی بارگذاری می‌شود (بدون Google Fonts). فایل `IRANSansX.woff2` را در مسیر `assets/fonts/` قرار دهید. تا قبل از آن، سایت با Vazirmatn/Tahoma نمایش داده می‌شود.
 
 ## انتشار روی GitHub Pages با دامنه pouone.ir
 

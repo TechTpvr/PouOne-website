@@ -6,9 +6,9 @@
   <title>PouOne | ابزارهای هوشمند برای ارتباط میان دستگاه‌ها</title>
   <meta name="description" content="PouOne مجموعه‌ای از ابزارهای کاربردی برای انتقال فایل، ارتباط VPN و چاپ میان موبایل و ویندوز. محصولات: SharePou، RoutePou، PrintPou و ConnectPou.">
   <meta name="theme-color" content="#07090F">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
   <link rel="canonical" href="https://pouone.ir/">
 
   <meta property="og:type" content="website">
@@ -26,9 +26,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300..800&amp;display=swap">
+  <link rel="preload" href="assets/fonts/IRANSansX.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/pouone-logo.webp" type="image/webp">
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -44,167 +42,108 @@
 </head>
 <body>
   <a class="skip-link" href="#products">رفتن به محتوای اصلی</a>
+  <div class="bg" aria-hidden="true"><i class="bg__a"></i><i class="bg__b"></i><i class="bg__grid"></i></div>
 
-  <!-- پس‌زمینه تزئینی -->
-  <div class="bg" aria-hidden="true">
-    <div class="bg__grid"></div>
-    <div class="bg__ring bg__ring--a"></div>
-    <div class="bg__ring bg__ring--b"></div>
-  </div>
-
-  <!-- نوار ناوبری -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a class="brand" href="#top" aria-label="PouOne، بازگشت به بالای صفحه">
-        <img class="brand__mark" src="assets/img/pouone-mark.webp" width="336" height="243" alt="">
-        <span class="brand__name" lang="en" dir="ltr">Pou<span>One</span></span>
+      <a class="brand" href="#top" aria-label="PouOne">
+        <img class="logo" src="assets/img/pouone-logo.webp" width="1198" height="283" alt="PouOne">
       </a>
-      <nav aria-label="ناوبری اصلی">
-        <ul class="nav__links">
-          <li><a href="#about" data-nav="about">درباره ما</a></li>
-          <li><a href="#contact" data-nav="contact">ارتباط با ما</a></li>
-        </ul>
+      <nav class="nav__links" aria-label="ناوبری اصلی">
+        <a href="#products">محصولات</a><a href="#about">درباره ما</a><a href="#contact">ارتباط با ما</a>
       </nav>
+      <button class="theme" id="theme" type="button" aria-label="تغییر حالت تیره/روشن">
+        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
     </div>
   </header>
 
   <main id="top">
-    <!-- قهرمان -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero">
       <div class="container hero__inner">
-        <div class="orbit">
-          <div class="orbit__deco" aria-hidden="true">
-            <div class="orbit__halo"></div>
-            <div class="orbit__ring orbit__ring--dash"></div>
-            <div class="orbit__ring orbit__ring--main">
-              <span class="orbit__node orbit__node--share"></span>
-              <span class="orbit__node orbit__node--route"></span>
-              <span class="orbit__node orbit__node--print"></span>
-              <span class="orbit__node orbit__node--connect"></span>
-            </div>
-          </div>
-          <img class="hero__logo" src="assets/img/pouone-logo.webp" width="1198" height="283" alt="PouOne" fetchpriority="high">
-        </div>
-        <h1 class="hero__title" id="hero-title">ابزارهایی ساده برای اتصال دستگاه‌ها</h1>
-        <p class="hero__lead">انتقال فایل، ارتباط VPN و چاپ میان موبایل و ویندوز؛ در یک خانواده از نرم‌افزارها.</p>
-        <a class="btn-cta" href="#products">مشاهده محصولات</a>
+        <p class="eyebrow reveal"><span></span>راهکارهای اتصال دستگاه‌ها</p>
+        <h1 class="hero__title reveal" id="hero-title"><span class="line"><span>دستگاه‌ها را</span></span> <span class="line"><span class="grad">یکپارچه کنید.</span></span></h1>
+        <p class="hero__lead reveal">انتقال فایل، ارتباط VPN و چاپ میان موبایل و ویندوز؛ در یک خانواده از نرم‌افزارهای دقیق و قابل‌اعتماد.</p>
+        <div class="hero__cta reveal"><a class="btn btn--primary" href="#products">مشاهده محصولات</a><a class="btn" href="#contact">ارتباط با ما</a></div>
+        <ul class="stats reveal" role="list">
+          <li><b>۴</b><span>محصول</span></li><li><b>۲</b><span>پلتفرم</span></li><li><b>۱</b><span>خانواده</span></li>
+        </ul>
       </div>
     </section>
 
-    <!-- محصولات -->
     <section class="section" id="products" aria-labelledby="products-title">
       <div class="container">
-        <header class="section__head">
-          <h2 class="section__title" id="products-title">محصولات</h2>
-          <p class="section__lead">یک محصول را انتخاب کنید تا توضیحات و دانلود آن را ببینید.</p>
-        </header>
-
+        <header class="head reveal"><span class="tag">محصولات</span><h2 id="products-title">خانواده Pou</h2></header>
         <ul class="cards" role="list">
-          <li class="cards__item reveal">
-            <button class="card" type="button" data-product="sharepou" aria-controls="product-panel" aria-pressed="false">
-              <span class="card__spot" aria-hidden="true"></span>
-              <img class="card__logo" src="assets/img/sharepou.webp" width="384" height="384" alt="" loading="lazy" decoding="async">
-              <span class="card__name" lang="en" dir="ltr">SharePou</span>
-              <span class="card__desc">انتقال فایل بین موبایل و ویندوز</span>
-              <span class="card__more" aria-hidden="true">جزئیات</span>
-            </button>
-          </li>
-          <li class="cards__item reveal">
-            <button class="card" type="button" data-product="routepou" aria-controls="product-panel" aria-pressed="false">
-              <span class="card__spot" aria-hidden="true"></span>
-              <img class="card__logo" src="assets/img/routepou.webp" width="384" height="384" alt="" loading="lazy" decoding="async">
-              <span class="card__name" lang="en" dir="ltr">RoutePou</span>
-              <span class="card__desc">برقراری ارتباط VPN بین موبایل و ویندوز</span>
-              <span class="card__more" aria-hidden="true">جزئیات</span>
-            </button>
-          </li>
-          <li class="cards__item reveal">
-            <button class="card" type="button" data-product="printpou" aria-controls="product-panel" aria-pressed="false">
-              <span class="card__spot" aria-hidden="true"></span>
-              <img class="card__logo" src="assets/img/printpou.webp" width="384" height="384" alt="" loading="lazy" decoding="async">
-              <span class="card__name" lang="en" dir="ltr">PrintPou</span>
-              <span class="card__desc">چاپ مستقیم از موبایل با پرینتر متصل به ویندوز</span>
-              <span class="card__more" aria-hidden="true">جزئیات</span>
-            </button>
-          </li>
-          <li class="cards__item reveal">
-            <button class="card" type="button" data-product="connectpou" aria-controls="product-panel" aria-pressed="false">
-              <span class="card__spot" aria-hidden="true"></span>
-              <img class="card__logo" src="assets/img/connectpou.webp" width="384" height="384" alt="" loading="lazy" decoding="async">
-              <span class="card__name" lang="en" dir="ltr">ConnectPou</span>
-              <span class="card__desc">ارتباط و اتصال دستگاه‌ها، از خانواده Pou</span>
-              <span class="card__more" aria-hidden="true">جزئیات</span>
-            </button>
-          </li>
+        <li class="reveal"><button class="card c-share" type="button" data-product="sharepou" aria-haspopup="dialog">
+          <span class="card__num" aria-hidden="true">۰۱</span>
+          <img class="card__logo" src="assets/img/sharepou.webp" width="384" height="384" alt="" loading="lazy" decoding="async">
+          <span class="card__name" lang="en" dir="ltr">SharePou</span>
+          <span class="card__desc">انتقال فایل بین موبایل و ویندوز</span>
+          <span class="card__more" aria-hidden="true">جزئیات <i></i></span>
+        </button></li>
+        <li class="reveal"><button class="card c-route" type="button" data-product="routepou" aria-haspopup="dialog">
+          <span class="card__num" aria-hidden="true">۰۲</span>
+          <img class="card__logo" src="assets/img/routepou.webp" width="384" height="384" alt="" loading="lazy" decoding="async">
+          <span class="card__name" lang="en" dir="ltr">RoutePou</span>
+          <span class="card__desc">ارتباط VPN بین موبایل و ویندوز</span>
+          <span class="card__more" aria-hidden="true">جزئیات <i></i></span>
+        </button></li>
+        <li class="reveal"><button class="card c-print" type="button" data-product="printpou" aria-haspopup="dialog">
+          <span class="card__num" aria-hidden="true">۰۳</span>
+          <img class="card__logo" src="assets/img/printpou.webp" width="384" height="384" alt="" loading="lazy" decoding="async">
+          <span class="card__name" lang="en" dir="ltr">PrintPou</span>
+          <span class="card__desc">چاپ مستقیم از موبایل با پرینتر ویندوز</span>
+          <span class="card__more" aria-hidden="true">جزئیات <i></i></span>
+        </button></li>
+        <li class="reveal"><button class="card c-connect" type="button" data-product="connectpou" aria-haspopup="dialog">
+          <span class="card__num" aria-hidden="true">۰۴</span>
+          <img class="card__logo" src="assets/img/connectpou.webp" width="384" height="384" alt="" loading="lazy" decoding="async">
+          <span class="card__name" lang="en" dir="ltr">ConnectPou</span>
+          <span class="card__desc">اتصال و ارتباط ساده میان دستگاه‌ها</span>
+          <span class="card__more" aria-hidden="true">جزئیات <i></i></span>
+        </button></li>
         </ul>
-
-        <!-- بخش جزئیات محصول (با انتخاب هر محصول در همین‌جا باز می‌شود) -->
-        <section class="panel" id="product-panel" aria-labelledby="panel-title" data-open="false">
-          <div class="panel__clip" inert>
-            <div class="panel__inner">
-              <button class="panel__close" type="button" aria-label="بستن جزئیات محصول">
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </button>
-              <div class="panel__body" id="panel-body" aria-live="polite">
-                <div class="panel__logo">
-                  <img id="panel-logo" src="assets/img/sharepou.webp" width="384" height="384" alt="">
-                </div>
-                <div class="panel__text">
-                  <h3 class="panel__title" id="panel-title" lang="en" dir="ltr">SharePou</h3>
-                  <p class="panel__tagline" id="panel-tagline"></p>
-                  <p class="panel__desc" id="panel-desc"></p>
-                  <h4 class="panel__sub">کاربردها</h4>
-                  <ul class="panel__uses" id="panel-uses"></ul>
-                  <div class="panel__actions" id="panel-actions"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </section>
 
-    <!-- درباره ما -->
-    <section class="section section--about" id="about" aria-labelledby="about-title">
+    <section class="section" id="about" aria-labelledby="about-title">
       <div class="container about">
-        <h2 class="section__title" id="about-title">درباره ما</h2>
-        <div class="about__text">
-          <p>PouOne مجموعه‌ای از ابزارهای کاربردی و هوشمند است که با هدف ساده‌تر کردن ارتباط میان دستگاه‌ها و بهبود تجربه استفاده از فناوری توسعه داده می‌شود.</p>
-          <p>ما در PouOne تلاش می‌کنیم راهکارهایی ساده، سریع و قابل‌اعتماد برای نیازهای روزمره کاربران ارائه کنیم.</p>
+        <header class="head reveal"><span class="tag">درباره ما</span><h2 id="about-title">فناوری، بدون پیچیدگی</h2></header>
+        <div class="about__grid">
+          <p class="reveal">PouOne مجموعه‌ای از ابزارهای کاربردی و هوشمند است که با هدف ساده‌تر کردن ارتباط میان دستگاه‌ها و بهبود تجربه استفاده از فناوری توسعه داده می‌شود. ما راهکارهایی ساده، سریع و قابل‌اعتماد برای نیازهای روزمره کاربران ارائه می‌کنیم.</p>
+          <ul class="values" role="list">
+            <li class="reveal"><b>ساده</b><span>بدون مراحل اضافه</span></li>
+            <li class="reveal"><b>سریع</b><span>انتقال و اتصال فوری</span></li>
+            <li class="reveal"><b>قابل‌اعتماد</b><span>پایدار در استفاده روزمره</span></li>
+          </ul>
         </div>
-        <ul class="about__values" role="list">
-          <li>ساده</li>
-          <li>سریع</li>
-          <li>قابل‌اعتماد</li>
-        </ul>
       </div>
     </section>
 
-    <!-- ارتباط با ما -->
-    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
-      <div class="container contact">
-        <h2 class="section__title" id="contact-title">ارتباط با ما</h2>
-        <div class="contact__box">
-          <p class="contact__lead">برای پرسش، پیشنهاد یا گزارش مشکل با ما در ارتباط باشید.</p>
-          <!-- اطلاعات تماس از فایل assets/js/config.js خوانده می‌شود -->
-          <dl class="contact__list" id="contact-list">
-            <div class="contact__row">
-              <dt>وب‌سایت</dt>
-              <dd><a href="https://pouone.ir" lang="en" dir="ltr">pouone.ir</a></dd>
-            </div>
-          </dl>
-          <p class="contact__empty" id="contact-empty" hidden>سایر راه‌های ارتباطی به‌زودی در همین بخش اضافه می‌شود.</p>
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact reveal">
+          <div><span class="tag">ارتباط با ما</span><h2 id="contact-title">در تماس باشید</h2><p>برای پرسش، پیشنهاد یا گزارش مشکل با ما در ارتباط باشید.</p></div>
+          <dl class="contact__list" id="contact-list"><div><dt>وب‌سایت</dt><dd><a href="https://pouone.ir" lang="en" dir="ltr">pouone.ir</a></dd></div></dl>
+          <p class="contact__empty" id="contact-empty" hidden>سایر راه‌های ارتباطی به‌زودی اضافه می‌شود.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <span lang="en" dir="ltr">© <span id="year">2026</span> PouOne</span>
-      <span lang="en" dir="ltr">pouone.ir</span>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container footer__inner"><span lang="en" dir="ltr">© <span id="year">2026</span> PouOne</span><span lang="en" dir="ltr">pouone.ir</span></div></footer>
+
+  <dialog class="modal" id="modal" aria-labelledby="m-title">
+    <button class="modal__close" type="button" id="m-close" aria-label="بستن"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <img class="modal__logo" id="m-logo" src="assets/img/sharepou.webp" width="384" height="384" alt="">
+    <h3 id="m-title" lang="en" dir="ltr"></h3>
+    <p class="modal__tag" id="m-tag"></p>
+    <p id="m-desc"></p>
+    <ul class="uses" id="m-uses"></ul>
+    <div class="actions" id="m-actions"></div>
+  </dialog>
 
   <script src="assets/js/config.js" defer></script>
   <script src="assets/js/products.js" defer></script>
